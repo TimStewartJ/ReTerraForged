@@ -26,9 +26,9 @@ class MixinServerPacksSource {
 		),
 		require = 1
 	)
-    private static PackRepository createPackRepository(RepositorySource[] repositorySources, Path path, DirectoryValidator directoryValidator) {
+    private static PackRepository createPackRepository(RepositorySource[] repositorySources, Path path) {
 		List<RepositorySource> sourceList = Lists.newArrayList(repositorySources);
-		sourceList.add(new RTFBuiltinPackSource(directoryValidator));
+		sourceList.add(new RTFBuiltinPackSource());
     	return new PackRepository(sourceList.toArray(RepositorySource[]::new));
     }
 }
